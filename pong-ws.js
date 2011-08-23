@@ -12,6 +12,7 @@ window.onload = function() {
 		Craftys.register("nhfu4fn8fgjwnf", function(clients) {
 			//The first client is master
 			isMaster = clients == 1;
+			console.log("usMaster: " + isMaster);
 			Crafty.scene('Main');
 		});
 	});
@@ -27,7 +28,7 @@ window.onload = function() {
 				Craftys.triggerRemote('LeftPaddleState', {y: this.y});
 			})
 			.bind('LeftPaddleState', function(m) {
-				this.attr({y:m.y});
+					this.attr({y:m.y});
 			});
 		Crafty.e("Paddle, 2D, DOM, Color, Multiway")
 			.color('rgb(0,255,0)')
